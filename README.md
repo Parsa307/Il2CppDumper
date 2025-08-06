@@ -2,7 +2,14 @@
 
 Unity il2cpp reverse engineer
 
-We as Parsast forked this Project to continue it. IMPORTANT: PLEASE DON'T USE THIS FOR MULTIPLAYER GAMES. WE FORKED IT FOR SINGLEPLAYER GAME MODDING.
+This project has been forked and maintained by Parsast to ensure continued support and development.
+
+🔧 Intended Use:
+This tool is strictly intended for single-player game modding and educational research.
+
+❌ IMPORTANT:
+Do NOT use this tool on multiplayer games.
+Doing so may violate Terms of Service, lead to bans, or be considered unethical or illegal.
 
 ## Features
 
