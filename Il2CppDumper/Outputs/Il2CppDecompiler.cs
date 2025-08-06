@@ -61,7 +61,7 @@ namespace Il2CppDumper
                         }
 
                         writer.Write($"\n// DLL: {imageName}");
-                        writer.Write($"\n// Namespace: `{metadata.GetStringFromIndex(typeDef.namespaceIndex)}`\n");
+                        writer.Write($"\n// Namespace: {metadata.GetStringFromIndex(typeDef.namespaceIndex)}\n");
                         if (config.DumpAttribute)
                         {
                             writer.Write(GetCustomAttribute(imageDef, typeDef.customAttributeIndex, typeDef.token));
