@@ -94,11 +94,6 @@ namespace Il2CppDumper
                     Console.WriteLine(e);
                 }
             }
-            if (config.RequireAnyKey)
-            {
-                Console.WriteLine("Press any key to exit...");
-                Console.ReadKey(true);
-            }
         }
 
         static void ShowHelp()
