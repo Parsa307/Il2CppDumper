@@ -10,10 +10,9 @@ namespace Il2CppDumper
     {
         private static Config config;
 
-        [STAThread]
         static void Main(string[] args)
         {
-            config = JsonSerializer.Deserialize<Config>(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"config.json"));
+            config = JsonSerializer.Deserialize<Config>(File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.json")));
             string il2cppPath = null;
             string metadataPath = null;
             string outputDir = null;
@@ -56,32 +55,13 @@ namespace Il2CppDumper
                     }
                 }
             }
-            outputDir ??= AppDomain.CurrentDomain.BaseDirectory;
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            outputDir = Directory.Exists(outputDir) ? Path.GetFullPath(outputDir) + Path.DirectorySeparatorChar : AppDomain.CurrentDomain.BaseDirectory;
             {
-                if (il2cppPath == null)
+                if (il2cppPath == null || metadataPath == null)
                 {
-                    var ofd = new OpenFileDialog
-                    {
-                        Filter = "Il2Cpp binary file|*.*"
-                    };
-                    if (ofd.ShowDialog())
-                    {
-                        il2cppPath = ofd.FileName;
-                        ofd.Filter = "global-metadata|global-metadata.dat";
-                        if (ofd.ShowDialog())
-                        {
-                            metadataPath = ofd.FileName;
-                        }
-                        else
-                        {
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        return;
-                    }
+                    Console.WriteLine("ERROR: Missing required input files.");
+                    ShowHelp();
+                    return;
                 }
             }
             if (il2cppPath == null)
