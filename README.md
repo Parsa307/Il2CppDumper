@@ -12,7 +12,7 @@ This tool is designed exclusively for single-player game modding and educational
 Using it in multiplayer environments may violate Terms of Service, result in bans, or be considered unethical and potentially illegal.  
 Cheating in multiplayer games ruins the experience for other players.
 
-Please respect game developers and other players—use responsibly!
+Please respect game developers and other players, use responsibly!
 
 ## Features
 
