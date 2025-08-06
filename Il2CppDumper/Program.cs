@@ -37,8 +37,11 @@ namespace Il2CppDumper
                 {
                     if (File.Exists(arg))
                     {
-                        var file = File.ReadAllBytes(arg);
-                        if (BitConverter.ToUInt32(file, 0) == 0xFAB11BAF)
+                        UInt32 magicBytes = 0;
+                        using (FileStream fileStream = File.OpenRead(arg)) {
+                            magicBytes = new BinaryReader(fileStream).ReadUInt32();
+                        }
+                        if (magicBytes == 0xFAB11BAF)
                         {
                             metadataPath = arg;
                         }
@@ -119,8 +122,8 @@ namespace Il2CppDumper
         private static bool Init(string il2cppPath, string metadataPath, out Metadata metadata, out Il2Cpp il2Cpp)
         {
             Console.WriteLine("Initializing metadata...");
-            var metadataBytes = File.ReadAllBytes(metadataPath);
-            metadata = new Metadata(new MemoryStream(metadataBytes));
+            var metadataStream = File.OpenRead(metadataPath);
+            metadata = new Metadata(metadataStream);
             Console.WriteLine($"Metadata Version: {metadata.Version}");
 
             Console.WriteLine("Initializing il2cpp file...");
