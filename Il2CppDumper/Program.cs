@@ -55,7 +55,13 @@ namespace Il2CppDumper
                     }
                 }
             }
-            outputDir = Directory.Exists(outputDir) ? Path.GetFullPath(outputDir) + Path.DirectorySeparatorChar : AppDomain.CurrentDomain.BaseDirectory;
+            if (string.IsNullOrEmpty(outputDir) || !Directory.Exists(outputDir))
+            {
+                Console.WriteLine("ERROR: The specified output folder does not exist.");
+                ShowHelp();
+                return;
+            }
+            outputDir = Path.GetFullPath(outputDir) + Path.DirectorySeparatorChar;
             {
                 if (il2cppPath == null || metadataPath == null)
                 {
