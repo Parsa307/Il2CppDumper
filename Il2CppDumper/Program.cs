@@ -25,8 +25,9 @@ namespace Il2CppDumper
                     return;
                 }
             }
-            if (args.Length > 3)
+            if (args.Length < 3)
             {
+                Console.WriteLine("ERROR: Not enough arguments.");
                 ShowHelp();
                 return;
             }
