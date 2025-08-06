@@ -2,14 +2,17 @@
 
 Unity il2cpp reverse engineer
 
-This project has been forked and maintained by Parsa307 to ensure continued support and development.
+This project is forked and maintained by **Parsa307** to ensure ongoing support and development.
 
-🔧 Intended Use:
-This tool is strictly intended for single-player game modding and educational research.
+🔧 **Intended Use:**  
+This tool is designed exclusively for single-player game modding and educational research.
 
-❌ IMPORTANT:
-Do NOT use this tool on multiplayer games.
-Doing so may violate Terms of Service, lead to bans, or be considered unethical or illegal.
+❌ **IMPORTANT:**  
+**Do not use this tool on multiplayer games.**  
+Using it in multiplayer environments may violate Terms of Service, result in bans, or be considered unethical and potentially illegal.  
+Cheating in multiplayer games ruins the experience for other players.
+
+Please respect game developers and other players—use responsibly!
 
 ## Features
 
