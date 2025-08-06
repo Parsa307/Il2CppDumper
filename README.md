@@ -2,7 +2,7 @@
 
 Unity il2cpp reverse engineer
 
-This project has been forked and maintained by Parsast to ensure continued support and development.
+This project has been forked and maintained by Parsa307 to ensure continued support and development.
 
 🔧 Intended Use:
 This tool is strictly intended for single-player game modding and educational research.
